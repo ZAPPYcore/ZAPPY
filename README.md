@@ -1,4 +1,4 @@
- # ZAPPY System Overview (English)
+ # ZAPPY System Overview
 
 © 2025 Yujin Choi. All Rights Reserved
 
