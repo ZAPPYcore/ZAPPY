@@ -1,0 +1,29 @@
+[package]
+name = "zappy-autonomy"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "Tier-9 AGI autonomy kernel orchestrating decision and master control loops"
+authors = ["Zappy AGI Team"]
+
+[dependencies]
+anyhow = "1"
+async-trait = "0.1"
+chrono = { version = "0.4", features = ["serde"] }
+futures = "0.3"
+indexmap = { version = "2", features = ["serde"] }
+once_cell = "1.19"
+parking_lot = "0.12"
+rand = { version = "0.8", features = ["small_rng"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = "1"
+tokio = { version = "1", features = ["macros", "rt-multi-thread", "sync", "time"] }
+tracing = "0.1"
+uuid = { version = "1", features = ["serde", "v4"] }
+shared-logging = { path = "../shared_logging" }
+shared-event-bus = { path = "../shared_event_bus" }
+
+[dev-dependencies]
+tempfile = "3"
+
