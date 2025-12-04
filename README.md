@@ -4,7 +4,6 @@
 
 ZAPPY is an orchestration platform that couples a Rust-based multi-runtime control plane with a Python-based language-model server. The top-level orchestrator (`entire_system_orchestrator.rs`) continually invokes planning, autonomy, action, learning, metacognition, world-model, simulation, self-upgrade, and natural-language runtimes while enforcing policies. This README consolidates the repository structure, runtime loops, module responsibilities, and operational guidance.
 
-NOTE: The main codebase is NOT present. Contact the E-mail on my profile for cooperations.
 ---
 
 ## 1. Repository Map
