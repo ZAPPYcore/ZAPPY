@@ -22,3 +22,4 @@
 - 주요 모듈(actions/autonomy/planning/reasoning/world/simulation/self-upgrade)을 거치는 모든 명령은 ExperienceHub 파이프라인에 남겨 재학습에 활용한다.
 - 감사 추적은 삭제할 수 없으며, 운영자만이 아카이브 롤오버를 승인할 수 있다.
 
+**현재 정책 준수 기술은 단순 참고 수준이며, 상용화 실행 시 추가적 보완이 필요함**
