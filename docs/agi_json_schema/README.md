@@ -1,6 +1,6 @@
 # AGI JSON Schemas
 
-This directory defines the canonical JSON schemas used across the Tier‑10 AGI
+This directory defines the canonical JSON schemas used across the AGI
 stack. They document how datasets, models, and checkpoints must be described so
 that any module (Rust, Python, or other languages) can reason about assets
 without bespoke adapters.
@@ -26,4 +26,5 @@ Example validation (Python):
 pip install jsonschema
 python -m jsonschema --instance /learning/datasets/foo/schema.json docs/agi_json_schema/dataset.schema.json
 ```
+
 
