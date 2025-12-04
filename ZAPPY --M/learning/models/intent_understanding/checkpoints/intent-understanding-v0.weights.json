@@ -1,0 +1,105 @@
+{
+  "model": "intent_understanding_transformer",
+  "version": "0.1.1",
+  "tokenizer": {
+    "type": "sentencepiece",
+    "vocab_size": 48000,
+    "lowercase": false,
+    "normalize_nfkc": true,
+    "special_tokens": ["<pad>", "<s>", "</s>", "<unk>", "<mask>"]
+  },
+  "encoder": {
+    "type": "hierarchical-transformer",
+    "embedding_dim": 512,
+    "num_layers": 10,
+    "num_heads": 8,
+    "ff_dim": 2048,
+    "dropout": 0.07,
+    "positional_encoding": "rotary",
+    "layer_norm_eps": 1e-5,
+    "init": "xavier_uniform",
+    "layer_settings": [
+      { "layer": 0, "alpha": 0.85, "residual_dropout": 0.04 },
+      { "layer": 1, "alpha": 0.9, "residual_dropout": 0.04 },
+      { "layer": 2, "alpha": 0.95, "residual_dropout": 0.05 },
+      { "layer": 3, "alpha": 1.0, "residual_dropout": 0.05 },
+      { "layer": 4, "alpha": 1.0, "residual_dropout": 0.05 },
+      { "layer": 5, "alpha": 1.0, "residual_dropout": 0.05 },
+      { "layer": 6, "alpha": 1.05, "residual_dropout": 0.06 },
+      { "layer": 7, "alpha": 1.05, "residual_dropout": 0.06 },
+      { "layer": 8, "alpha": 1.1, "residual_dropout": 0.07 },
+      { "layer": 9, "alpha": 1.15, "residual_dropout": 0.07 }
+    ]
+  },
+  "classifier": {
+    "layers": [
+      { "type": "dense", "in": 512, "out": 384, "activation": "gelu", "dropout": 0.04 },
+      { "type": "dense", "in": 384, "out": 256, "activation": "gelu", "dropout": 0.05 },
+      { "type": "dense", "in": 256, "out": 128, "activation": "swish", "dropout": 0.05 },
+      { "type": "dense", "in": 128, "out": 12, "activation": "linear" }
+    ],
+    "temperature": 0.65,
+    "intent_bias": {
+      "plan.strategy": 0.12,
+      "plan.resource_eval": 0.08,
+      "world.refresh": -0.05,
+      "simulation.high_fidelity": 0.15,
+      "actions.programming": 0.2,
+      "actions.maintenance": -0.02,
+      "knowledge.search": 0.05,
+      "learning.retrain": 0.18,
+      "autonomy.directive": 0.04,
+      "metacognition.reflect": 0.09,
+      "self_upgrade.audit": 0.22,
+      "nlp.transcribe": -0.1
+    }
+  },
+  "label_space": [
+    "plan.strategy",
+    "plan.resource_eval",
+    "world.refresh",
+    "simulation.high_fidelity",
+    "actions.programming",
+    "actions.maintenance",
+    "knowledge.search",
+    "learning.retrain",
+    "autonomy.directive",
+    "metacognition.reflect",
+    "self_upgrade.audit",
+    "nlp.transcribe"
+  ],
+  "priority_regression": {
+    "head": {
+      "type": "dense",
+      "in": 512,
+      "out": 1,
+      "activation": "sigmoid"
+    },
+    "scaling": { "mean": 0.67, "std": 0.14 }
+  },
+  "normalization": {
+    "text_language": ["ko-KR", "en-US"],
+    "mean_priority": 0.67,
+    "std_priority": 0.14,
+    "confidence_floor": 0.5
+  },
+  "router_hints": {
+    "modules": {
+      "plan.strategy": ["planning", "actions"],
+      "plan.resource_eval": ["planning", "world"],
+      "world.refresh": ["world"],
+      "simulation.high_fidelity": ["simulation"],
+      "actions.programming": ["actions"],
+      "actions.maintenance": ["actions", "self_upgrade"],
+      "knowledge.search": ["knowledge"],
+      "learning.retrain": ["learning"],
+      "autonomy.directive": ["autonomy"],
+      "metacognition.reflect": ["metacognition"],
+      "self_upgrade.audit": ["self_upgrade", "actions"],
+      "nlp.transcribe": ["nlp"]
+    }
+  },
+  "init_strategy": "heuristic_seed_intent_v1",
+  "status": "needs_fine_tune"
+}
+

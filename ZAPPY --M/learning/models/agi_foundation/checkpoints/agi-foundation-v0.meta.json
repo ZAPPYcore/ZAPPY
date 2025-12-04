@@ -1,0 +1,21 @@
+{
+  "checkpoint_id": "agi-foundation-v0",
+  "created_at": "2025-11-22T06:45:00Z",
+  "step": 0,
+  "dataset": "../../datasets/agi_foundation",
+  "schema": "../model_schema.json",
+  "notes": "Seed multi-modal AGI backbone weights before large-scale fine-tuning.",
+  "metrics": {
+    "val_intent_f1": 0.0,
+    "val_risk_auc": 0.0,
+    "val_resource_rmse": 0.0
+  },
+  "artifacts": [
+    {
+      "path": "agi-foundation-v0.weights.json",
+      "type": "weights",
+      "format": "json"
+    }
+  ]
+}
+

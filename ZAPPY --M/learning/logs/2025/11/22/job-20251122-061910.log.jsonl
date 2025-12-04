@@ -1,0 +1,66 @@
+{"timestamp":"2025-11-22T06:19:10.959784200Z","module":"trn","level":"INFO","message":"job queued","metadata":{"job_id":"job-f49c16b0-5fef-4f6d-9704-a1ec188af904","profile":"prod"}}
+{"timestamp":"2025-11-22T06:19:10.971068100Z","module":"trn","level":"INFO","message":"job started","metadata":{"job_id":"job-f49c16b0-5fef-4f6d-9704-a1ec188af904"}}
+{"event": "session_start", "timestamp": "2025-11-22T15:19:12+0900", "payload": {"profile": "prod", "devices": ["cuda:0"]}}
+{"event": "step", "timestamp": "2025-11-22T15:19:13+0900", "payload": {"step": 0, "loss": 0.043028395622968674}}
+{"event": "step", "timestamp": "2025-11-22T15:19:13+0900", "payload": {"step": 10, "loss": 0.032676953822374344}}
+{"event": "step", "timestamp": "2025-11-22T15:19:13+0900", "payload": {"step": 20, "loss": 0.026226475834846497}}
+{"event": "step", "timestamp": "2025-11-22T15:19:13+0900", "payload": {"step": 30, "loss": 0.020731991156935692}}
+{"event": "step", "timestamp": "2025-11-22T15:19:13+0900", "payload": {"step": 40, "loss": 0.019164813682436943}}
+{"event": "step", "timestamp": "2025-11-22T15:19:13+0900", "payload": {"step": 50, "loss": 0.019098913297057152}}
+{"event": "step", "timestamp": "2025-11-22T15:19:13+0900", "payload": {"step": 60, "loss": 0.015592951327562332}}
+{"event": "step", "timestamp": "2025-11-22T15:19:13+0900", "payload": {"step": 70, "loss": 0.010457196272909641}}
+{"event": "step", "timestamp": "2025-11-22T15:19:13+0900", "payload": {"step": 80, "loss": 0.013044715858995914}}
+{"event": "step", "timestamp": "2025-11-22T15:19:13+0900", "payload": {"step": 90, "loss": 0.013107157312333584}}
+{"event": "step", "timestamp": "2025-11-22T15:19:13+0900", "payload": {"step": 100, "loss": 0.01014710683375597}}
+{"event": "step", "timestamp": "2025-11-22T15:19:13+0900", "payload": {"step": 110, "loss": 0.010106404311954975}}
+{"event": "step", "timestamp": "2025-11-22T15:19:13+0900", "payload": {"step": 120, "loss": 0.00770766893401742}}
+{"event": "step", "timestamp": "2025-11-22T15:19:13+0900", "payload": {"step": 130, "loss": 0.006953434552997351}}
+{"event": "step", "timestamp": "2025-11-22T15:19:13+0900", "payload": {"step": 140, "loss": 0.007103248033672571}}
+{"event": "step", "timestamp": "2025-11-22T15:19:13+0900", "payload": {"step": 150, "loss": 0.007508876267820597}}
+{"event": "step", "timestamp": "2025-11-22T15:19:13+0900", "payload": {"step": 160, "loss": 0.008106066845357418}}
+{"event": "step", "timestamp": "2025-11-22T15:19:13+0900", "payload": {"step": 170, "loss": 0.008372587151825428}}
+{"event": "step", "timestamp": "2025-11-22T15:19:13+0900", "payload": {"step": 180, "loss": 0.00667015602812171}}
+{"event": "step", "timestamp": "2025-11-22T15:19:13+0900", "payload": {"step": 190, "loss": 0.006334421690553427}}
+{"event": "step", "timestamp": "2025-11-22T15:19:13+0900", "payload": {"step": 200, "loss": 0.004905120003968477}}
+{"event": "step", "timestamp": "2025-11-22T15:19:13+0900", "payload": {"step": 210, "loss": 0.004766348283737898}}
+{"event": "step", "timestamp": "2025-11-22T15:19:13+0900", "payload": {"step": 220, "loss": 0.004568335134536028}}
+{"event": "step", "timestamp": "2025-11-22T15:19:13+0900", "payload": {"step": 230, "loss": 0.004544252995401621}}
+{"event": "step", "timestamp": "2025-11-22T15:19:13+0900", "payload": {"step": 240, "loss": 0.003949922509491444}}
+{"event": "step", "timestamp": "2025-11-22T15:19:13+0900", "payload": {"step": 250, "loss": 0.004844372626394033}}
+{"event": "step", "timestamp": "2025-11-22T15:19:13+0900", "payload": {"step": 260, "loss": 0.004740793723613024}}
+{"event": "step", "timestamp": "2025-11-22T15:19:13+0900", "payload": {"step": 270, "loss": 0.004608216695487499}}
+{"event": "step", "timestamp": "2025-11-22T15:19:13+0900", "payload": {"step": 280, "loss": 0.004617674741894007}}
+{"event": "step", "timestamp": "2025-11-22T15:19:13+0900", "payload": {"step": 290, "loss": 0.004706625826656818}}
+{"event": "step", "timestamp": "2025-11-22T15:19:13+0900", "payload": {"step": 300, "loss": 0.004305806942284107}}
+{"event": "step", "timestamp": "2025-11-22T15:19:13+0900", "payload": {"step": 310, "loss": 0.003177105216309428}}
+{"event": "step", "timestamp": "2025-11-22T15:19:13+0900", "payload": {"step": 320, "loss": 0.004090508911758661}}
+{"event": "step", "timestamp": "2025-11-22T15:19:13+0900", "payload": {"step": 330, "loss": 0.0036998940631747246}}
+{"event": "step", "timestamp": "2025-11-22T15:19:13+0900", "payload": {"step": 340, "loss": 0.003288732608780265}}
+{"event": "step", "timestamp": "2025-11-22T15:19:13+0900", "payload": {"step": 350, "loss": 0.0034294528886675835}}
+{"event": "step", "timestamp": "2025-11-22T15:19:13+0900", "payload": {"step": 360, "loss": 0.0037218695506453514}}
+{"event": "step", "timestamp": "2025-11-22T15:19:13+0900", "payload": {"step": 370, "loss": 0.004281418398022652}}
+{"event": "step", "timestamp": "2025-11-22T15:19:13+0900", "payload": {"step": 380, "loss": 0.003513510338962078}}
+{"event": "step", "timestamp": "2025-11-22T15:19:13+0900", "payload": {"step": 390, "loss": 0.0030558279249817133}}
+{"event": "step", "timestamp": "2025-11-22T15:19:13+0900", "payload": {"step": 400, "loss": 0.003408151911571622}}
+{"event": "step", "timestamp": "2025-11-22T15:19:13+0900", "payload": {"step": 410, "loss": 0.00265076314099133}}
+{"event": "step", "timestamp": "2025-11-22T15:19:13+0900", "payload": {"step": 420, "loss": 0.002746316371485591}}
+{"event": "step", "timestamp": "2025-11-22T15:19:13+0900", "payload": {"step": 430, "loss": 0.002739761956036091}}
+{"event": "step", "timestamp": "2025-11-22T15:19:13+0900", "payload": {"step": 440, "loss": 0.0027501278091222048}}
+{"event": "step", "timestamp": "2025-11-22T15:19:13+0900", "payload": {"step": 450, "loss": 0.002649587346240878}}
+{"event": "step", "timestamp": "2025-11-22T15:19:13+0900", "payload": {"step": 460, "loss": 0.0023445456754416227}}
+{"event": "step", "timestamp": "2025-11-22T15:19:13+0900", "payload": {"step": 470, "loss": 0.0020673610270023346}}
+{"event": "step", "timestamp": "2025-11-22T15:19:13+0900", "payload": {"step": 480, "loss": 0.002004808746278286}}
+{"event": "step", "timestamp": "2025-11-22T15:19:13+0900", "payload": {"step": 490, "loss": 0.0017185789765790105}}
+{"event": "step", "timestamp": "2025-11-22T15:19:13+0900", "payload": {"step": 500, "loss": 0.0023163186851888895}}
+{"event": "step", "timestamp": "2025-11-22T15:19:13+0900", "payload": {"step": 510, "loss": 0.001737202052026987}}
+{"event": "step", "timestamp": "2025-11-22T15:19:13+0900", "payload": {"step": 520, "loss": 0.0016916613094508648}}
+{"event": "step", "timestamp": "2025-11-22T15:19:13+0900", "payload": {"step": 530, "loss": 0.0017667579231783748}}
+{"event": "step", "timestamp": "2025-11-22T15:19:13+0900", "payload": {"step": 540, "loss": 0.0018871909705922008}}
+{"event": "step", "timestamp": "2025-11-22T15:19:13+0900", "payload": {"step": 550, "loss": 0.0021804047282785177}}
+{"event": "step", "timestamp": "2025-11-22T15:19:13+0900", "payload": {"step": 560, "loss": 0.0016518165357410908}}
+{"event": "step", "timestamp": "2025-11-22T15:19:13+0900", "payload": {"step": 570, "loss": 0.001794664771296084}}
+{"event": "step", "timestamp": "2025-11-22T15:19:13+0900", "payload": {"step": 580, "loss": 0.0016086213290691376}}
+{"event": "step", "timestamp": "2025-11-22T15:19:13+0900", "payload": {"step": 590, "loss": 0.0015962576726451516}}
+{"event": "checkpoint", "timestamp": "2025-11-22T15:19:13+0900", "payload": {"meta": "C:\\Users\\USER\\Desktop\\ZAPPY --master\\ZAPPY--M\\learning\\models\\intent_understanding\\checkpoints\\checkpoint-1763792353.meta.json"}}
+{"event": "session_complete", "timestamp": "2025-11-22T15:19:13+0900", "payload": {}}
+{"timestamp":"2025-11-22T06:19:14.320121600Z","module":"trn","level":"INFO","message":"job completed","metadata":{"job_id":"job-f49c16b0-5fef-4f6d-9704-a1ec188af904"}}

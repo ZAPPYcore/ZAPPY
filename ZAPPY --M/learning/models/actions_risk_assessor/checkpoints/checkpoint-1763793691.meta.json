@@ -1,0 +1,10 @@
+{
+  "id": "checkpoint-1763793691",
+  "model": "pytorch_runner_stub",
+  "created_at": "2025-11-22T06:41:31Z",
+  "training_step": 1200,
+  "devices": [
+    "cuda:0"
+  ],
+  "notes": "Fine-tune actions risk assessor v0.1.2 on historical actions metrics."
+}

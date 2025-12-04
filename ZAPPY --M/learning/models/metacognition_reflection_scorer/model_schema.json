@@ -1,0 +1,25 @@
+{
+  "$schema": "../../docs/agi_json_schema/model.schema.json",
+  "name": "metacognition_reflection_scorer",
+  "version": "0.1.0",
+  "description": "Sequence regression model that scores reflection digests for resilience, novelty, and risk awareness.",
+  "input_spec": {
+    "reflection_tokens": 512,
+    "metrics_dim": 16
+  },
+  "output_spec": {
+    "targets": [
+      "resilience",
+      "novel_insight",
+      "risk_awareness"
+    ],
+    "constraints": {
+      "resilience": [0, 1],
+      "novel_insight": [0, 1],
+      "risk_awareness": [0, 1]
+    }
+  },
+  "checkpoint_format": "json",
+  "default_checkpoint": "checkpoints/meta-reflection-v0.weights.json"
+}
+

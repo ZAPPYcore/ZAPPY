@@ -1,0 +1,34 @@
+{
+  "$schema": "../../docs/agi_json_schema/model.schema.json",
+  "name": "agi_foundation",
+  "version": "0.1.0",
+  "description": "Multi-modal AGI orchestration backbone combining text, telemetry, and world signals for cross-module intent, planning, and execution quality predictions.",
+  "input_spec": {
+    "modalities": {
+      "natural_language": {
+        "tokenizer": "sentencepiece-64k",
+        "max_tokens": 2048
+      },
+      "telemetry": {
+        "feature_dim": 96,
+        "window": 64
+      },
+      "world_signals": {
+        "feature_dim": 40,
+        "window": 48
+      }
+    }
+  },
+  "output_spec": {
+    "heads": {
+      "intent_logits": 64,
+      "module_activation": 16,
+      "risk_vector": 8,
+      "resource_forecast": 4,
+      "reflection_score": 3
+    }
+  },
+  "checkpoint_format": "json",
+  "default_checkpoint": "checkpoints/agi-foundation-v0.weights.json"
+}
+

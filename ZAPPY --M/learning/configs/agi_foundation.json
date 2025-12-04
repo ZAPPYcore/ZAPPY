@@ -1,0 +1,22 @@
+{
+  "dataset_index": "../datasets/agi_foundation/index.json",
+  "checkpoint_dir": "../models/agi_foundation/checkpoints",
+  "base_checkpoint": "agi-foundation-v0.weights.json",
+  "output_checkpoint": "agi-foundation-v1.weights.json",
+  "steps": 3000,
+  "batch_size": 8,
+  "learning_rate": 0.00015,
+  "warmup_steps": 200,
+  "weight_decay": 0.04,
+  "grad_clip": 1.0,
+  "loss_weights": {
+    "intent_logits": 1.0,
+    "module_activation": 0.6,
+    "risk_vector": 0.4,
+    "resource_forecast": 0.5,
+    "reflection_score": 0.3
+  },
+  "profile": "prod",
+  "notes": "Full AGI foundation model fine-tune across multi-modal dataset."
+}
+

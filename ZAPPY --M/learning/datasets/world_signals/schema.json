@@ -1,0 +1,22 @@
+{
+  "$schema": "../../docs/agi_json_schema/dataset.schema.json",
+  "name": "world_signals",
+  "description": "Aggregated world runtime features for load/anomaly/sentiment forecasting.",
+  "modality": ["timeseries"],
+  "version": "0.1.0",
+  "features": [
+    { "name": "region", "dtype": "string" },
+    { "name": "timestamp", "dtype": "string", "description": "ISO start of window" },
+    { "name": "context", "dtype": "object", "description": "Static descriptors (season, climate, policy)" },
+    { "name": "series", "dtype": "object", "description": "Lists of covariates across the input window" }
+  ],
+  "labels": [
+    "load_horizon",
+    "anomaly_prob_horizon",
+    "sentiment_horizon",
+    "volatility_horizon"
+  ],
+  "shard_format": "jsonl",
+  "default_importance": 0.85
+}
+

@@ -1,0 +1,10 @@
+{
+  "id": "checkpoint-1763792367",
+  "model": "pytorch_runner_stub",
+  "created_at": "2025-11-22T06:19:27Z",
+  "training_step": 600,
+  "devices": [
+    "cuda:0"
+  ],
+  "notes": "Fine-tune intent understanding weights on curated bilingual intent dataset for NaturalLanguageClient."
+}

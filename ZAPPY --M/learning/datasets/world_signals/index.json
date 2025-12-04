@@ -1,0 +1,11 @@
+{
+  "name": "world_signals",
+  "records": [
+    {
+      "shard": "shards/shard-00000.data",
+      "samples": 6,
+      "importance": 0.95
+    }
+  ]
+}
+

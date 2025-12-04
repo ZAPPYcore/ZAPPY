@@ -1,0 +1,58 @@
+{
+  "model": "autonomy_cycle_classifier",
+  "version": "0.1.0",
+  "text_encoder": {
+    "type": "roberta-small",
+    "hidden_size": 384,
+    "max_position_embeddings": 256,
+    "dropout": 0.1,
+    "init": "roberta_base_weights_pruned"
+  },
+  "metrics_encoder": {
+    "type": "mlp",
+    "layers": [
+      { "in": 32, "out": 64, "activation": "relu" },
+      { "in": 64, "out": 128, "activation": "relu" }
+    ],
+    "dropout": 0.05
+  },
+  "fusion": {
+    "type": "cross_attention",
+    "num_heads": 4,
+    "hidden_size": 384,
+    "residual": true
+  },
+  "classifier": {
+    "layers": [
+      { "in": 384, "out": 256, "activation": "gelu" },
+      { "in": 256, "out": 5, "activation": "linear" }
+    ],
+    "temperature": 0.6
+  },
+  "auxiliary_heads": {
+    "confidence": {
+      "type": "dense",
+      "layers": [
+        { "in": 384, "out": 128, "activation": "relu" },
+        { "in": 128, "out": 1, "activation": "sigmoid" }
+      ]
+    },
+    "directive_count": {
+      "type": "poisson",
+      "lambda_head": {
+        "in": 384,
+        "out": 1,
+        "activation": "softplus"
+      }
+    }
+  },
+  "class_priors": {
+    "stabilize": 0.26,
+    "expand": 0.18,
+    "recover": 0.21,
+    "audit": 0.15,
+    "handoff": 0.2
+  },
+  "status": "needs_fine_tune"
+}
+

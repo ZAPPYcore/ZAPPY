@@ -1,0 +1,20 @@
+{
+  "dataset_index": "../datasets/world_signals/index.json",
+  "checkpoint_dir": "../models/world_signal_forecaster/checkpoints",
+  "base_checkpoint": "world-signal-v0.weights.json",
+  "output_checkpoint": "world-signal-v1.weights.json",
+  "steps": 2000,
+  "batch_size": 16,
+  "learning_rate": 0.00025,
+  "warmup_steps": 100,
+  "weight_decay": 0.02,
+  "loss_weights": {
+    "load": 1.0,
+    "anomaly": 0.7,
+    "sentiment": 0.4,
+    "volatility": 0.3
+  },
+  "eval_every": 100,
+  "notes": "Fine-tune world signal forecaster v0.1.2 on multi-resolution world signals dataset."
+}
+

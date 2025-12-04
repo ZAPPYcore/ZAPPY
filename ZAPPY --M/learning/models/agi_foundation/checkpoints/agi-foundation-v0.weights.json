@@ -1,0 +1,87 @@
+{
+  "model": "agi_foundation",
+  "version": "0.1.0",
+  "text_stack": {
+    "encoder": {
+      "type": "transformer",
+      "layers": 24,
+      "hidden_size": 1024,
+      "ff_dim": 4096,
+      "num_heads": 16,
+      "dropout": 0.08,
+      "rope_theta": 100000,
+      "activation": "swiglu"
+    },
+    "adapter": {
+      "rank": 32,
+      "dropout": 0.05
+    }
+  },
+  "telemetry_stack": {
+    "type": "temporal_conformer",
+    "layers": 8,
+    "hidden_size": 256,
+    "num_heads": 8,
+    "kernel_size": 7,
+    "dropout": 0.05
+  },
+  "world_stack": {
+    "type": "temporal_fusion",
+    "hidden_size": 192,
+    "num_layers": 6,
+    "num_heads": 6,
+    "dropout": 0.04
+  },
+  "cross_modal_router": {
+    "type": "moe",
+    "experts": 12,
+    "hidden_size": 512,
+    "capacity_factor": 1.2,
+    "dropout": 0.05
+  },
+  "heads": {
+    "intent_logits": {
+      "type": "dense",
+      "layers": [
+        { "in": 1024, "out": 512, "activation": "gelu" },
+        { "in": 512, "out": 64, "activation": "linear" }
+      ]
+    },
+    "module_activation": {
+      "type": "dense",
+      "layers": [
+        { "in": 1024, "out": 256, "activation": "relu" },
+        { "in": 256, "out": 16, "activation": "sigmoid" }
+      ]
+    },
+    "risk_vector": {
+      "type": "dense",
+      "layers": [
+        { "in": 1024, "out": 128, "activation": "relu" },
+        { "in": 128, "out": 8, "activation": "linear" }
+      ]
+    },
+    "resource_forecast": {
+      "type": "dense",
+      "layers": [
+        { "in": 1024, "out": 128, "activation": "relu" },
+        { "in": 128, "out": 4, "activation": "softplus" }
+      ]
+    },
+    "reflection_score": {
+      "type": "dense",
+      "layers": [
+        { "in": 1024, "out": 96, "activation": "gelu" },
+        { "in": 96, "out": 3, "activation": "sigmoid" }
+      ]
+    }
+  },
+  "normalization": {
+    "telemetry_mean": 0.48,
+    "telemetry_std": 0.17,
+    "world_mean": 0.5,
+    "world_std": 0.16
+  },
+  "status": "needs_fine_tune"
+}
+

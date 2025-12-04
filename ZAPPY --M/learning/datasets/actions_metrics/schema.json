@@ -1,0 +1,23 @@
+{
+  "$schema": "../../docs/agi_json_schema/dataset.schema.json",
+  "name": "actions_metrics",
+  "description": "Historical action execution records with resource metrics and safety annotations.",
+  "modality": ["text", "timeseries"],
+  "version": "0.1.0",
+  "features": [
+    { "name": "domain", "dtype": "string" },
+    { "name": "intent", "dtype": "string" },
+    { "name": "summary", "dtype": "string" },
+    { "name": "safety_flags", "dtype": "string[]", "description": "List of triggered safety policies" },
+    { "name": "policy_tags", "dtype": "string[]" },
+    { "name": "historical_metrics", "dtype": "float32[]", "description": "Rolling CPU/energy metrics sequence" }
+  ],
+  "labels": [
+    "label_safety",
+    "cpu_ms",
+    "energy_kwh"
+  ],
+  "shard_format": "jsonl",
+  "default_importance": 0.8
+}
+

@@ -1,0 +1,20 @@
+{
+  "checkpoint_id": "intent-understanding-v0",
+  "created_at": "2025-11-22T09:00:00Z",
+  "step": 0,
+  "dataset": "../../datasets/intent_understanding",
+  "schema": "../model_schema.json",
+  "notes": "Enhanced seed checkpoint (v0.1.1) with richer encoder/classifier heuristics prior to trn fine-tuning.",
+  "metrics": {
+    "val_intent_f1": 0.0,
+    "val_accuracy": 0.0
+  },
+  "artifacts": [
+    {
+      "path": "intent-understanding-v0.weights.json",
+      "type": "weights",
+      "format": "json"
+    }
+  ]
+}
+

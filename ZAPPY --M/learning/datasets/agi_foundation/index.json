@@ -1,0 +1,11 @@
+{
+  "name": "agi_foundation",
+  "records": [
+    {
+      "shard": "shards/shard-00000.data",
+      "samples": 5,
+      "importance": 1.0
+    }
+  ]
+}
+

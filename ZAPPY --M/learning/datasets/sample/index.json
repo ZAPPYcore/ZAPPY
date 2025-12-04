@@ -1,0 +1,8 @@
+{
+  "name": "sample",
+  "records": [
+    { "shard": "shards/shard-00000.data", "samples": 4, "importance": 0.7 },
+    { "shard": "shards/shard-00001.data", "samples": 4, "importance": 0.4 }
+  ]
+}
+

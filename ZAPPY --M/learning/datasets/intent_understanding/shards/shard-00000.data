@@ -1,0 +1,13 @@
+{"text":"사용자 자율 루프 상태 보고서 만들어줘","intent":"autonomy.directive","confidence":0.78,"locale":"ko-KR","priority":0.64}
+{"text":"지난 주 infra 에러 로그 500번 카운트 알려줘","intent":"knowledge.search","confidence":0.81,"locale":"ko-KR","priority":0.57}
+{"text":"재훈련 돌려서 의도 분류 정밀도 높여","intent":"learning.retrain","confidence":0.74,"locale":"ko-KR","priority":0.71}
+{"text":"World model 새 anomaly 반영됐어?","intent":"world.refresh","confidence":0.69,"locale":"ko-KR","priority":0.52}
+{"text":"Need a high fidelity scenario for grid overload","intent":"simulation.high_fidelity","confidence":0.88,"locale":"en-US","priority":0.76}
+{"text":"코드 패치 작성해서 API latency 줄여","intent":"actions.programming","confidence":0.9,"locale":"ko-KR","priority":0.8}
+{"text":"self upgrade compliance audit 수행해","intent":"self_upgrade.audit","confidence":0.72,"locale":"ko-KR","priority":0.68}
+{"text":"metacognition reflection rapid 모드로 돌려","intent":"metacognition.reflect","confidence":0.73,"locale":"ko-KR","priority":0.61}
+{"text":"Plan energy diversification 전략 세워","intent":"plan.strategy","confidence":0.86,"locale":"ko-KR","priority":0.82}
+{"text":"Check if NAT route patch merged, summarize","intent":"actions.maintenance","confidence":0.77,"locale":"en-US","priority":0.55}
+{"text":"transcribe latest operator handoff note","intent":"nlp.transcribe","confidence":0.83,"locale":"en-US","priority":0.46}
+{"text":"resource use 평가해서 우선순위 재배치해","intent":"plan.resource_eval","confidence":0.79,"locale":"ko-KR","priority":0.74}
+

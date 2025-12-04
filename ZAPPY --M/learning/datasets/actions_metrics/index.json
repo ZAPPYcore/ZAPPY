@@ -1,0 +1,11 @@
+{
+  "name": "actions_metrics",
+  "records": [
+    {
+      "shard": "shards/shard-00000.data",
+      "samples": 10,
+      "importance": 0.9
+    }
+  ]
+}
+

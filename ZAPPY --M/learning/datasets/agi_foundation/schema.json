@@ -1,0 +1,23 @@
+{
+  "$schema": "../../docs/agi_json_schema/dataset.schema.json",
+  "name": "agi_foundation",
+  "description": "Unified supervision signals for AGI foundation model: natural language objectives, telemetry windows, world signals, and cross-module targets.",
+  "modality": ["text", "timeseries"],
+  "version": "0.1.0",
+  "features": [
+    { "name": "natural_language", "dtype": "string" },
+    { "name": "telemetry_window", "dtype": "float32[]" },
+    { "name": "world_window", "dtype": "float32[]" },
+    { "name": "tags", "dtype": "string[]" }
+  ],
+  "labels": [
+    "intent_logits",
+    "module_activation",
+    "risk_vector",
+    "resource_forecast",
+    "reflection_score"
+  ],
+  "shard_format": "jsonl",
+  "default_importance": 1.0
+}
+

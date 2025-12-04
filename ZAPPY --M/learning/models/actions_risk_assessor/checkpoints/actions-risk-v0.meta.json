@@ -1,0 +1,21 @@
+{
+  "checkpoint_id": "actions-risk-v0",
+  "created_at": "2025-11-22T10:12:00Z",
+  "step": 0,
+  "dataset": "../../datasets/actions_metrics",
+  "schema": "../model_schema.json",
+  "notes": "Seed multi-task model for estimating action safety and resource impact.",
+  "metrics": {
+    "val_ce": 0.0,
+    "val_rmse_cpu": 0.0,
+    "val_rmse_energy": 0.0
+  },
+  "artifacts": [
+    {
+      "path": "actions-risk-v0.weights.json",
+      "type": "weights",
+      "format": "json"
+    }
+  ]
+}
+

@@ -1,0 +1,11 @@
+{
+  "name": "intent_understanding",
+  "records": [
+    {
+      "shard": "shards/shard-00000.data",
+      "samples": 12,
+      "importance": 0.95
+    }
+  ]
+}
+

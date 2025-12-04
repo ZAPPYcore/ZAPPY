@@ -1,0 +1,32 @@
+{
+  "$schema": "../../docs/agi_json_schema/dataset.schema.json",
+  "name": "intent_understanding",
+  "description": "Korean/English blended user-intent supervision for the NaturalLanguageClient IR pipeline.",
+  "modality": ["text"],
+  "license": "internal-use-only",
+  "version": "0.1.0",
+  "features": [
+    { "name": "text", "dtype": "string", "description": "raw user utterance" },
+    { "name": "intent", "dtype": "string", "description": "normalized target intent label" },
+    { "name": "confidence", "dtype": "float32", "description": "annotator confidence between 0 and 1" },
+    { "name": "locale", "dtype": "string", "description": "BCP-47 locale tag" },
+    { "name": "priority", "dtype": "float32", "description": "relative urgency classifier target" }
+  ],
+  "labels": [
+    "plan.strategy",
+    "plan.resource_eval",
+    "world.refresh",
+    "simulation.high_fidelity",
+    "actions.programming",
+    "actions.maintenance",
+    "knowledge.search",
+    "learning.retrain",
+    "autonomy.directive",
+    "metacognition.reflect",
+    "self_upgrade.audit",
+    "nlp.transcribe"
+  ],
+  "shard_format": "jsonl",
+  "default_importance": 0.75
+}
+

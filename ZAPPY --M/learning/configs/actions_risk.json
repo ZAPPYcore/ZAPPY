@@ -1,0 +1,21 @@
+{
+  "dataset_index": "../datasets/actions_metrics/index.json",
+  "checkpoint_dir": "../models/actions_risk_assessor/checkpoints",
+  "base_checkpoint": "actions-risk-v0.weights.json",
+  "output_checkpoint": "actions-risk-v1.weights.json",
+  "steps": 1200,
+  "batch_size": 32,
+  "learning_rate": 0.0004,
+  "warmup_steps": 80,
+  "weight_decay": 0.02,
+  "loss_overrides": {
+    "safety": 1.0,
+    "cpu": 0.5,
+    "energy": 0.5,
+    "uncertainty": 0.12,
+    "counterfactual": 0.15
+  },
+  "eval_every": 100,
+  "notes": "Fine-tune actions risk assessor v0.1.2 on historical actions metrics."
+}
+

@@ -1,0 +1,28 @@
+{
+  "$schema": "../../docs/agi_json_schema/model.schema.json",
+  "name": "world_signal_forecaster",
+  "version": "0.1.0",
+  "description": "Temporal fusion transformer predicting regional anomalies, load, and sentiment for the world runtime.",
+  "input_spec": {
+    "window": 96,
+    "frequency": "1h",
+    "features": [
+      "region_load",
+      "anomaly_rate",
+      "ops_sentiment",
+      "weather_index",
+      "policy_risk"
+    ]
+  },
+  "output_spec": {
+    "targets": [
+      "next_load",
+      "next_anomaly_prob",
+      "next_sentiment"
+    ],
+    "horizon": 12
+  },
+  "checkpoint_format": "json",
+  "default_checkpoint": "checkpoints/world-signal-v0.weights.json"
+}
+

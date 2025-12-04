@@ -1,0 +1,52 @@
+{
+  "model": "knowledge_snippet_ranker",
+  "version": "0.1.0",
+  "encoder": {
+    "type": "dual_tower_cross",
+    "query_tower": {
+      "base": "deberta-v3-small",
+      "hidden_size": 384,
+      "dropout": 0.1
+    },
+    "document_tower": {
+      "base": "deberta-v3-small",
+      "hidden_size": 384,
+      "dropout": 0.1
+    },
+    "interaction": {
+      "type": "cross-attention",
+      "num_layers": 2,
+      "num_heads": 8,
+      "hidden_size": 384
+    }
+  },
+  "scoring_head": {
+    "type": "dense",
+    "layers": [
+      { "in": 384, "out": 256, "activation": "gelu" },
+      { "in": 256, "out": 1, "activation": "linear" }
+    ]
+  },
+  "safety_head": {
+    "type": "dense",
+    "layers": [
+      { "in": 384, "out": 128, "activation": "relu" },
+      { "in": 128, "out": 1, "activation": "sigmoid" }
+    ]
+  },
+  "freshness_head": {
+    "type": "dense",
+    "layers": [
+      { "in": 384, "out": 64, "activation": "relu" },
+      { "in": 64, "out": 1, "activation": "softplus" }
+    ],
+    "scale": 30
+  },
+  "loss_weights": {
+    "relevance": 1.0,
+    "safety": 0.4,
+    "freshness": 0.2
+  },
+  "status": "needs_fine_tune"
+}
+

@@ -1,0 +1,31 @@
+{
+  "$schema": "../../docs/agi_json_schema/model.schema.json",
+  "name": "intent_understanding_transformer",
+  "version": "0.1.0",
+  "description": "Transformer encoder fine-tuned for multi-intent inference across Korean/English operator requests.",
+  "input_spec": {
+    "embedding_dim": 384,
+    "tokenizer": "sentencepiece",
+    "context_window": 1024
+  },
+  "output_spec": {
+    "label_space": [
+      "plan.strategy",
+      "plan.resource_eval",
+      "world.refresh",
+      "simulation.high_fidelity",
+      "actions.programming",
+      "actions.maintenance",
+      "knowledge.search",
+      "learning.retrain",
+      "autonomy.directive",
+      "metacognition.reflect",
+      "self_upgrade.audit",
+      "nlp.transcribe"
+    ],
+    "activation": "softmax"
+  },
+  "checkpoint_format": "json",
+  "default_checkpoint": "checkpoints/intent-understanding-v0.weights.json"
+}
+

@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "name": "sample",
+  "version": "1.0.0",
+  "shard_count": 2,
+  "shard_size_bytes": 64,
+  "features": [
+    { "name": "input", "dtype": "float32", "shape": [16] },
+    { "name": "label", "dtype": "float32", "shape": [4] }
+  ],
+  "index": "index.json"
+}
+

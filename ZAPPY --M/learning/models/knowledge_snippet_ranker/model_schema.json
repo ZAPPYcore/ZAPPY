@@ -1,0 +1,21 @@
+{
+  "$schema": "../../docs/agi_json_schema/model.schema.json",
+  "name": "knowledge_snippet_ranker",
+  "version": "0.1.0",
+  "description": "Cross-encoder ranker scoring knowledge snippets against autonomy/planning queries.",
+  "input_spec": {
+    "query_length": 256,
+    "document_length": 512,
+    "tokenizer": "bpe-64k"
+  },
+  "output_spec": {
+    "score": "relevance",
+    "auxiliary": {
+      "safety": "probability",
+      "freshness_days": "regression"
+    }
+  },
+  "checkpoint_format": "json",
+  "default_checkpoint": "checkpoints/kn-ranker-v0.weights.json"
+}
+

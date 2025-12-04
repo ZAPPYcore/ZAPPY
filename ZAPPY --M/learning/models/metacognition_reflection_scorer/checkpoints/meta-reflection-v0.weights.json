@@ -1,0 +1,36 @@
+{
+  "model": "metacognition_reflection_scorer",
+  "version": "0.1.0",
+  "encoder": {
+    "type": "bi-encoder",
+    "text": {
+      "base": "longformer-base-4096",
+      "hidden_size": 768,
+      "max_tokens": 512,
+      "dropout": 0.08
+    },
+    "metrics": {
+      "type": "gru",
+      "input_size": 16,
+      "hidden_size": 64,
+      "num_layers": 2,
+      "dropout": 0.05
+    },
+    "fusion": {
+      "type": "attention_pooling",
+      "hidden_size": 512
+    }
+  },
+  "regression_head": {
+    "type": "dense",
+    "layers": [
+      { "in": 512, "out": 256, "activation": "gelu" },
+      { "in": 256, "out": 128, "activation": "gelu" },
+      { "in": 128, "out": 3, "activation": "sigmoid" }
+    ]
+  },
+  "target_mapping": ["resilience", "novel_insight", "risk_awareness"],
+  "loss": "mse",
+  "status": "needs_fine_tune"
+}
+

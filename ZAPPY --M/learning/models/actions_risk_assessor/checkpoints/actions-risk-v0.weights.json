@@ -1,0 +1,120 @@
+{
+  "model": "actions_risk_assessor",
+  "version": "0.1.2",
+  "text_encoder": {
+    "base": "miniLM-L12",
+    "hidden_size": 384,
+    "max_tokens": 256,
+    "dropout": 0.085,
+    "adapter_rank": 16,
+    "layer_norm_eps": 1e-6,
+    "prefix_tuning": {
+      "length": 16,
+      "initializer": "normal_0.02"
+    }
+  },
+  "categorical_embeddings": {
+    "domain": { "size": 16, "dim": 64 },
+    "intent": { "size": 16, "dim": 64 },
+    "safety_flags": { "size": 32, "dim": 32 },
+    "domain_intent_pair": { "size": 64, "dim": 48 },
+    "policy_tags": { "size": 32, "dim": 24 }
+  },
+  "metrics_encoder": {
+    "type": "temporal_cnn",
+    "channels": [32, 64, 96, 128],
+    "kernel_sizes": [3, 5, 7, 9],
+    "dilations": [1, 2, 3, 4],
+    "dropout": 0.045,
+    "residual": true,
+    "layer_norm": true
+  },
+  "attention_bridge": {
+    "type": "multihead_cross",
+    "num_heads": 8,
+    "hidden_size": 448,
+    "dropout": 0.05
+  },
+  "fusion_layer": {
+    "type": "gated_residual",
+    "output_dim": 704,
+    "layers": [
+      { "in": 640, "out": 704, "activation": "gelu", "dropout": 0.035 },
+      { "in": 704, "out": 704, "activation": "gelu", "dropout": 0.035 }
+    ],
+    "gating": "sigmoid"
+  },
+  "context_dropout": {
+    "initial": 0.11,
+    "final": 0.045,
+    "schedule_steps": 500
+  },
+  "risk_prior": {
+    "green": 0.52,
+    "yellow": 0.27,
+    "orange": 0.14,
+    "red": 0.07
+  },
+  "safety_head": {
+    "type": "dense",
+    "layers": [
+      { "in": 704, "out": 352, "activation": "relu" },
+      { "in": 352, "out": 160, "activation": "relu" },
+      { "in": 160, "out": 4, "activation": "linear" }
+    ],
+    "temperature": 0.55,
+    "calibration": {
+      "method": "dirichlet_temperature",
+      "alpha": [1.18, 1.08, 1.02, 0.98]
+    },
+    "fairness_regularizer": 0.02
+  },
+  "uncertainty_head": {
+    "type": "variance",
+    "layers": [
+      { "in": 704, "out": 192, "activation": "relu" },
+      { "in": 192, "out": 1, "activation": "softplus" }
+    ],
+    "min_variance": 1e-4,
+    "max_variance": 2.5
+  },
+  "cpu_head": {
+    "type": "mixture_density",
+    "components": 4,
+    "hidden_layers": [
+      { "in": 704, "out": 320, "activation": "relu" },
+      { "in": 320, "out": 240, "activation": "relu" }
+    ],
+    "scale": 12000,
+    "priors": [0.4, 0.3, 0.2, 0.1],
+    "variance_floor": 0.0005
+  },
+  "energy_head": {
+    "type": "mixture_density",
+    "components": 3,
+    "hidden_layers": [
+      { "in": 704, "out": 320, "activation": "relu" },
+      { "in": 320, "out": 160, "activation": "relu" }
+    ],
+    "scale": 2.5,
+    "priors": [0.5, 0.35, 0.15],
+    "variance_floor": 0.0002
+  },
+  "counterfactual_head": {
+    "type": "dense",
+    "layers": [
+      { "in": 704, "out": 256, "activation": "gelu" },
+      { "in": 256, "out": 256, "activation": "gelu" }
+    ],
+    "outputs": 48
+  },
+  "loss_weights": {
+    "safety": 1.0,
+    "cpu": 0.5,
+    "energy": 0.5,
+    "uncertainty": 0.12,
+    "counterfactual": 0.15
+  },
+  "status": "needs_fine_tune"
+}
+

@@ -1,0 +1,23 @@
+{
+  "$schema": "../../docs/agi_json_schema/model.schema.json",
+  "name": "actions_risk_assessor",
+  "version": "0.1.0",
+  "description": "Predictive model estimating safety class probabilities and expected energy/cpu usage for pending actions.",
+  "input_spec": {
+    "fields": [
+      "domain",
+      "intent",
+      "summary_tokens",
+      "safety_flags",
+      "historical_metrics"
+    ]
+  },
+  "output_spec": {
+    "safety_probs": ["green", "yellow", "orange", "red"],
+    "expected_cpu_ms": "regression",
+    "expected_energy_kwh": "regression"
+  },
+  "checkpoint_format": "json",
+  "default_checkpoint": "checkpoints/actions-risk-v0.weights.json"
+}
+

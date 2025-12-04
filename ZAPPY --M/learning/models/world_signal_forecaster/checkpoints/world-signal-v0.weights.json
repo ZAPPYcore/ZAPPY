@@ -1,0 +1,96 @@
+{
+  "model": "world_signal_forecaster",
+  "version": "0.1.2",
+  "scaler": {
+    "type": "robust",
+    "location": [0.55, 0.12, 0.48, 0.3, 0.25],
+    "scale": [0.2, 0.08, 0.15, 0.1, 0.12],
+    "seasonal_adjust": true,
+    "per_region_offsets": true
+  },
+  "temporal_encoder": {
+    "type": "temporal-fusion-transformer",
+    "d_embedding": 192,
+    "num_layers": 10,
+    "num_heads": 8,
+    "dropout": 0.04,
+    "gating": "glu",
+    "static_context": {
+      "region": { "embedding_dim": 40, "init": "normal_0.012" },
+      "season": { "embedding_dim": 12, "init": "normal_0.02" },
+      "climate_zone": { "embedding_dim": 12, "init": "normal_0.02" },
+      "infrastructure_grade": { "embedding_dim": 8, "init": "normal_0.01" }
+    },
+    "multi_resolution": [
+      { "window": 96, "freq": "1h" },
+      { "window": 48, "freq": "2h" },
+      { "window": 28, "freq": "4h" }
+    ],
+    "exogenous_covariates": ["geo_index", "supply_gap", "policy_alert", "fuel_price"],
+    "decoder_context_length": 24
+  },
+  "event_embedding": {
+    "type": "spline",
+    "knots": 8,
+    "dim": 32,
+    "severity_scale": 1.5
+  },
+  "regime_switcher": {
+    "states": ["normal", "stress", "crisis"],
+    "transition_matrix": [
+      [0.92, 0.07, 0.01],
+      [0.12, 0.8, 0.08],
+      [0.08, 0.22, 0.7]
+    ]
+  },
+  "heads": {
+    "load": {
+      "type": "quantile",
+      "quantiles": [0.05, 0.25, 0.5, 0.75, 0.95],
+      "layers": [
+        { "in": 192, "out": 144, "activation": "relu" },
+        { "in": 144, "out": 96, "activation": "relu" },
+        { "in": 96, "out": 60, "activation": "linear" }
+      ],
+      "loss": "pinball"
+    },
+    "anomaly": {
+      "type": "dense",
+      "layers": [
+        { "in": 192, "out": 120, "activation": "gelu" },
+        { "in": 120, "out": 48, "activation": "sigmoid" }
+      ],
+      "loss": "binary_cross_entropy",
+      "class_weights": [1.0, 3.8]
+    },
+    "sentiment": {
+      "type": "dense",
+      "layers": [
+        { "in": 192, "out": 120, "activation": "tanh" },
+        { "in": 120, "out": 48, "activation": "linear" }
+      ],
+      "loss": "mse"
+    },
+    "volatility": {
+      "type": "dense",
+      "layers": [
+        { "in": 192, "out": 96, "activation": "relu" },
+        { "in": 96, "out": 24, "activation": "softplus" }
+      ]
+    }
+  },
+  "scenario_ensembles": {
+    "count": 6,
+    "dropout_rate": 0.18,
+    "aggregation": "median",
+    "diversity_penalty": 0.03
+  },
+  "dropout_schedule": {
+    "start": 0.06,
+    "end": 0.025,
+    "warmup": 100,
+    "total_steps": 1500
+  },
+  "status": "needs_fine_tune"
+}
+

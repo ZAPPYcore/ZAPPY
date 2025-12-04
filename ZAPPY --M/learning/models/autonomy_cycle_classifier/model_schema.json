@@ -1,0 +1,27 @@
+{
+  "$schema": "../../docs/agi_json_schema/model.schema.json",
+  "name": "autonomy_cycle_classifier",
+  "version": "0.1.0",
+  "description": "Classifier that predicts directive mix and confidence bands from autonomy sensor narratives.",
+  "input_spec": {
+    "sequence_length": 256,
+    "modalities": ["text", "metrics"],
+    "metrics_dim": 32
+  },
+  "output_spec": {
+    "classes": [
+      "stabilize",
+      "expand",
+      "recover",
+      "audit",
+      "handoff"
+    ],
+    "auxiliary": {
+      "confidence": "regression",
+      "directive_count": "int"
+    }
+  },
+  "checkpoint_format": "json",
+  "default_checkpoint": "checkpoints/autonomy-cycle-v0.weights.json"
+}
+
