@@ -1,2 +1,2 @@
 
-**The langmodel directory is absent**
+**The "./ZAPPY --M/langmodel" directory & "./webui" directory is absent**
