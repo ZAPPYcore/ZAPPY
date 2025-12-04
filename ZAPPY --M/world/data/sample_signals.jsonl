@@ -1,0 +1,4 @@
+{"region":"region-alpha","metrics":{"load":0.72,"demand":0.51},"severity":0.68}
+{"region":"region-beta","metrics":{"load":0.41,"demand":0.83},"severity":0.58}
+{"region":"region-gamma","metrics":{"load":0.87,"demand":0.66},"severity":0.91}
+

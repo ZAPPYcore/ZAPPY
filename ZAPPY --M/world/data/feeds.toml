@@ -1,0 +1,23 @@
+version = 1
+
+[global]
+max_batch = 96
+required_metrics = ["load", "demand"]
+min_severity = 0.0
+max_severity = 1.0
+
+[[feeds]]
+name = "sample_file"
+kind = "file"
+path = "sample_signals.jsonl"
+batch_max = 48
+
+[[feeds]]
+name = "http_reference"
+kind = "http"
+url = "https://example.org/signals"
+method = "GET"
+timeout_ms = 3500
+array_root = "data"
+enabled = false
+

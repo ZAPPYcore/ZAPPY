@@ -1,0 +1,36 @@
+[package]
+name = "zappy-world"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "World modeling runtime for AGI environment state, telemetry, and learning."
+authors = ["Zappy AGI Team"]
+
+[dependencies]
+anyhow = "1"
+async-trait = "0.1"
+chrono = { version = "0.4", features = ["serde"] }
+indexmap = { version = "2", features = ["serde"] }
+parking_lot = "0.12"
+rand = { version = "0.8", features = ["small_rng"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = "1"
+tokio = { version = "1", features = ["macros", "rt-multi-thread", "sync", "time", "fs"] }
+uuid = { version = "1", features = ["serde", "v4"] }
+shared-logging = { path = "../shared_logging" }
+shared-event-bus = { path = "../shared_event_bus" }
+futures = "0.3"
+reqwest = { version = "0.11", default-features = false, features = ["json", "gzip", "brotli", "deflate", "rustls-tls"] }
+toml = "0.8"
+
+# Optional connectors
+rdkafka = { version = "0.36", optional = true, default-features = false, features = ["cmake-build", "tokio"] }
+
+[dev-dependencies]
+tempfile = "3"
+
+[features]
+default = []
+kafka = ["rdkafka"]
+

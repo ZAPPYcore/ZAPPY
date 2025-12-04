@@ -1,0 +1,26 @@
+[package]
+name = "zappy-planning"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "Tier-10 AGI planning stack (short-term + long-term engines with telemetry)"
+authors = ["Zappy AGI Team"]
+
+[dependencies]
+anyhow = "1"
+async-trait = "0.1"
+chrono = { version = "0.4", features = ["serde"] }
+indexmap = { version = "2", features = ["serde"] }
+parking_lot = "0.12"
+rand = { version = "0.8", features = ["small_rng"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+shared-logging = { path = "../shared_logging" }
+shared-event-bus = { path = "../shared_event_bus" }
+thiserror = "1"
+tokio = { version = "1", features = ["rt-multi-thread", "fs", "macros"] }
+uuid = { version = "1", features = ["serde", "v4"] }
+
+[dev-dependencies]
+tempfile = "3"
+

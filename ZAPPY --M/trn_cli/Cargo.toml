@@ -1,0 +1,20 @@
+[package]
+name = "trn"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "Tier-10 AGI training CLI"
+authors = ["Zappy AGI Team"]
+
+[dependencies]
+anyhow = "1"
+chrono = { version = "0.4", features = ["serde"] }
+clap = { version = "4", features = ["derive"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+uuid = { version = "1", features = ["serde", "v4"] }
+zappy-learning = { path = "../learning" }
+shared-logging = { path = "../shared_logging" }
+shared-event-bus = { path = "../shared_event_bus" }
+tokio = { version = "1", features = ["rt-multi-thread"] }
+
