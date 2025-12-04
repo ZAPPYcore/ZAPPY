@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://schemas.zappy-agi.local/agi/model.schema.json",
+  "title": "AGI Model Schema",
+  "type": "object",
+  "properties": {
+    "name": { "type": "string" },
+    "framework": { "type": "string", "enum": ["pytorch", "tensorflow", "jax", "custom"] },
+    "dtype": { "type": "string", "enum": ["float16", "bfloat16", "float32"] },
+    "architecture": { "type": "string" },
+    "vocab_size": { "type": "integer", "minimum": 1 },
+    "max_seq_len": { "type": "integer", "minimum": 1 },
+    "parameter_count": { "type": "integer", "minimum": 1 },
+    "sharding": {
+      "type": "object",
+      "properties": {
+        "type": { "type": "string", "enum": ["ddp", "tensor_parallel", "pipeline_parallel", "zero"] },
+        "shard_count": { "type": "integer", "minimum": 1 }
+      },
+      "required": ["type", "shard_count"]
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "required": ["name", "framework", "dtype", "architecture", "sharding"]
+}
+

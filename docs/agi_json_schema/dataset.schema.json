@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://schemas.zappy-agi.local/agi/dataset.schema.json",
+  "title": "AGI Dataset Schema",
+  "type": "object",
+  "properties": {
+    "name": { "type": "string" },
+    "version": { "type": "string" },
+    "description": { "type": "string" },
+    "created_at": { "type": "string", "format": "date-time" },
+    "shard_count": { "type": "integer", "minimum": 1 },
+    "shard_size_bytes": { "type": "integer", "minimum": 1 },
+    "features": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "dtype": { "type": "string" },
+          "shape": {
+            "type": "array",
+            "items": { "type": "integer", "minimum": -1 }
+          }
+        },
+        "required": ["name", "dtype"]
+      }
+    },
+    "index": { "type": "string", "description": "Relative path to index.json" },
+    "schema_version": { "type": "string", "default": "1.0.0" }
+  },
+  "required": ["name", "version", "shard_count", "features", "index"]
+}
+

@@ -1,0 +1,25 @@
+{"timestamp":"2025-11-20T13:08:27.751395800Z","module":"planning-orchestrator","level":"INFO","message":"planning.long_term.queue","metadata":{"objectives":1}}
+{"timestamp":"2025-11-20T13:22:07.506827200Z","module":"planning-orchestrator","level":"INFO","message":"planning.long_term.queue","metadata":{"objectives":1}}
+{"timestamp":"2025-11-20T13:22:07.507475500Z","module":"planning-orchestrator","level":"INFO","message":"planning.long_term.plan_generated","metadata":{"duration_weeks":24,"objective":"learning kOREAN","risk":0.3799999952316284,"roi":0.9499999284744263}}
+{"timestamp":"2025-11-22T03:11:31.724524900Z","module":"planning-orchestrator","level":"INFO","message":"planning.long_term.queue","metadata":{"objectives":1}}
+{"timestamp":"2025-11-22T03:11:31.725661700Z","module":"planning-orchestrator","level":"INFO","message":"planning.long_term.plan_generated","metadata":{"duration_weeks":24,"objective":"stabilize core systems","risk":0.42000001668930054,"roi":0.9499999284744263}}
+{"timestamp":"2025-11-22T04:15:15.951781200Z","module":"planning-orchestrator","level":"INFO","message":"planning.long_term.queue","metadata":{"objectives":1}}
+{"timestamp":"2025-11-22T04:15:15.952317300Z","module":"planning-orchestrator","level":"INFO","message":"planning.long_term.plan_generated","metadata":{"duration_weeks":24,"objective":"파이썬 계산기 구현","risk":0.3799999952316284,"roi":0.9499999284744263}}
+{"timestamp":"2025-11-22T04:15:15.953882800Z","module":"planning-orchestrator","level":"INFO","message":"planning.short_term.begin","metadata":{"objective":"파이썬 계산기 구현","phases":2}}
+{"timestamp":"2025-11-22T04:15:15.954095100Z","module":"planning-orchestrator","level":"INFO","message":"planning.short_term.schedule_ready","metadata":{"tasks":5}}
+{"timestamp":"2025-11-22T07:37:56.167212500Z","module":"planning-orchestrator","level":"INFO","message":"planning.long_term.queue","metadata":{"objectives":1}}
+{"timestamp":"2025-11-22T07:37:56.168992800Z","module":"planning-orchestrator","level":"INFO","message":"planning.long_term.plan_generated","metadata":{"duration_weeks":24,"objective":"how to be rich","risk":0.3799999952316284,"roi":0.9499999284744263}}
+{"timestamp":"2025-11-22T10:54:23.349525400Z","module":"planning-orchestrator","level":"INFO","message":"planning.long_term.queue","metadata":{"objectives":1}}
+{"timestamp":"2025-11-22T10:54:23.350062700Z","module":"planning-orchestrator","level":"INFO","message":"planning.long_term.plan_generated","metadata":{"duration_weeks":24,"objective":"ASI 프로토타입 개발 요청","risk":0.46000000834465027,"roi":0.9499999284744263}}
+{"timestamp":"2025-11-22T10:54:23.350775Z","module":"planning-orchestrator","level":"INFO","message":"planning.short_term.begin","metadata":{"objective":"ASI 프로토타입 개발 요청","phases":4}}
+{"timestamp":"2025-11-22T10:54:23.351009100Z","module":"planning-orchestrator","level":"INFO","message":"planning.short_term.schedule_ready","metadata":{"tasks":10}}
+{"timestamp":"2025-11-22T10:57:02.740593600Z","module":"planning-orchestrator","level":"INFO","message":"planning.long_term.queue","metadata":{"objectives":1}}
+{"timestamp":"2025-11-22T10:57:02.742112600Z","module":"planning-orchestrator","level":"INFO","message":"planning.long_term.plan_generated","metadata":{"duration_weeks":24,"objective":"stabilize core systems","risk":0.46000000834465027,"roi":0.9499999284744263}}
+{"timestamp":"2025-11-22T10:57:20.949515800Z","module":"planning-orchestrator","level":"INFO","message":"planning.short_term.begin","metadata":{"objective":"stabilize core systems","phases":4}}
+{"timestamp":"2025-11-22T10:57:20.951047800Z","module":"planning-orchestrator","level":"INFO","message":"planning.short_term.schedule_ready","metadata":{"tasks":10}}
+{"timestamp":"2025-11-25T09:56:21.828592900Z","module":"planning-orchestrator","level":"INFO","message":"planning.long_term.queue","metadata":{"objectives":1}}
+{"timestamp":"2025-11-25T09:56:21.830259500Z","module":"planning-orchestrator","level":"INFO","message":"planning.long_term.plan_generated","metadata":{"duration_weeks":24,"objective":"비트코인에 대해 웹 검색 및 학습","risk":0.42000001668930054,"roi":0.9499999284744263}}
+{"timestamp":"2025-11-28T06:57:08.776501Z","module":"planning-orchestrator","level":"INFO","message":"planning.long_term.queue","metadata":{"objectives":1}}
+{"timestamp":"2025-11-28T06:57:08.776900100Z","module":"planning-orchestrator","level":"INFO","message":"planning.long_term.plan_generated","metadata":{"duration_weeks":24,"objective":"사용자 이메일 관리 요청","risk":0.42000001668930054,"roi":0.9499999284744263}}
+{"timestamp":"2025-11-28T06:57:08.777625100Z","module":"planning-orchestrator","level":"INFO","message":"planning.short_term.begin","metadata":{"objective":"사용자 이메일 관리 요청","phases":3}}
+{"timestamp":"2025-11-28T06:57:08.777832800Z","module":"planning-orchestrator","level":"INFO","message":"planning.short_term.schedule_ready","metadata":{"tasks":8}}

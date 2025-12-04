@@ -1,0 +1,27 @@
+[workspace]
+members = [
+    "ZAPPY--M/actions",
+    "ZAPPY--M/autonomy",
+    "ZAPPY--M/creativity",
+    "ZAPPY--M/knowledge",
+    "ZAPPY--M/learning",
+    "ZAPPY--M/memory_data",
+    "ZAPPY--M/metacognition",
+    "ZAPPY--M/nlp",
+    "ZAPPY--M/reasoning",
+    "ZAPPY--M/world",
+    "ZAPPY--M/simulationengine",
+    "ZAPPY--M/self_upgrade",
+    "ZAPPY--M/entire_system_orchestrator_app",
+    "ZAPPY--M/trn_cli",
+    "ZAPPY--M/shared_logging",
+    "ZAPPY--M/shared_event_bus",
+    "ZAPPY--M/planning",
+]
+resolver = "2"
+
+[workspace.package]
+edition = "2021"
+authors = ["Zappy AGI Team"]
+license = "MIT"
+

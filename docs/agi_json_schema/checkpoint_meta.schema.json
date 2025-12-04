@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://schemas.zappy-agi.local/agi/checkpoint_meta.schema.json",
+  "title": "AGI Checkpoint Metadata Schema",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string" },
+    "model": { "type": "string" },
+    "created_at": { "type": "string", "format": "date-time" },
+    "training_step": { "type": "integer", "minimum": 0 },
+    "epoch": { "type": "number", "minimum": 0 },
+    "hash": { "type": "string" },
+    "devices": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "paths": {
+      "type": "object",
+      "properties": {
+        "binary": { "type": "string" },
+        "optimizer": { "type": "string" },
+        "scheduler": { "type": "string" }
+      }
+    },
+    "notes": { "type": "string" },
+    "schema_version": { "type": "string", "default": "1.0.0" }
+  },
+  "required": ["id", "model", "created_at", "training_step", "hash"]
+}
+
