@@ -1,0 +1,28 @@
+[package]
+name = "zappy-learning"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "Tier-9 AGI adaptive learning stack (classical ML, deep learning, combining, subsidiary)"
+authors = ["Zappy AGI Team"]
+
+[dependencies]
+anyhow = "1"
+async-trait = "0.1"
+chrono = { version = "0.4", features = ["serde"] }
+futures = "0.3"
+indexmap = { version = "2", features = ["serde"] }
+ndarray = { version = "0.15", features = ["serde"] }
+parking_lot = "0.12"
+rand = { version = "0.8", features = ["small_rng"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = "1"
+tokio = { version = "1", features = ["macros", "rt-multi-thread", "sync", "time"] }
+uuid = { version = "1", features = ["serde", "v4"] }
+shared-logging = { path = "../shared_logging" }
+shared-event-bus = { path = "../shared_event_bus" }
+
+[dev-dependencies]
+tempfile = "3"
+
